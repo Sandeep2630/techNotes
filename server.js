@@ -23,6 +23,11 @@ app.use("/", express.static(path.join(__dirname, "/public")));
 
 app.use("/", require("./routes/root"));
 
+
+
+
+
+
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
@@ -33,6 +38,9 @@ app.all("*", (req, res) => {
     res.type("txt").send("404 not found");
   }
 });
+
+
+
 app.use(errorHandler);
 mongoose.connection.once("open", () => {
   console.log("connected to mongodb");
