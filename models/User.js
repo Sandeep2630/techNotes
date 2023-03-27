@@ -17,8 +17,8 @@ const userSchema = new mongoose.Schema({
   ],
   active: {
     type: String,
-    default: ture,
+    default: true,
   },
 });
 
-module.exports = mongoose.modal("User", userSchema);
+module.exports = mongoose.model("User", userSchema);
